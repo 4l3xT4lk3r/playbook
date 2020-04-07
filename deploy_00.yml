@@ -9,3 +9,14 @@
     crm_timezone: yourtimezone
 
   tasks:
+  - include:
+      deploy_crm_centos7_01_base.yml
+
+  - include:
+      deploy_crm_centos7_02_clone.yml
+
+  - include:
+      deploy_crm_centos7_03_permissions.yml
+
+ - include:
+      deploy_crm_centos7_04_mysql.yml
