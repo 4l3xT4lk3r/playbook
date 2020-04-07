@@ -7,6 +7,8 @@
   vars:
     crm_datacenter: datacenter
     crm_timezone: yourtimezone
+    crm_ssh_port: 22
+    crm_ssh_accepted_hosts: acceptedhosts
 
   tasks:
   - include:
