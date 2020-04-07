@@ -1,0 +1,30 @@
+- name: "System: ensure group [developers] exists"
+  group:
+    name: developers
+    state: present
+
+- name: "System: ensure user [crm] with primary group [developers] exists"
+  user:
+    name: crm
+    shell: /sbin/nologin
+    group: developers
+
+- name: "System: ensure group [webwriters] exists (slave)"
+  group:
+    name: webwriters
+    state: present
+  when: "'pc' not in group_names"
+
+- name: "System: ensure that [apache] in [webwriters] group (slave)"
+  user:
+    name: apache
+    groups: webwriters
+    state: present
+  when: "'pc' not in group_names"
+
+- name: "System: ensure that [mysql] in [webwriters] group (slave)"
+  user:
+    name: mysql
+    groups: webwriters
+    state: present
+  when: "'pc' not in group_names"
