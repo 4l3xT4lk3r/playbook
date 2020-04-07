@@ -1,0 +1,7 @@
+- name: "CRM: git clone processing"
+  shell: cd /var/www/html && git clone --branch=dev https://{{crm_pc_git_repo_user}}:{{crm_pc_git_repo_pass}}@{{crm_pc_git_repo_url}}
+  when: "'pc' in group_names"
+
+- name: "CRM: git clone admin"
+  shell: cd /var/www/html && git clone --branch=dev https://{{crm_ap_git_repo_user}}:{{crm_ap_git_repo_pass}}@{{crm_ap_git_repo_url}}
+  when: "'ap' in group_names"
