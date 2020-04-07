@@ -14,7 +14,22 @@
     crm_logrotate_httpd: httpd
     crm_logrotate_crm_ap: crm
     crm_logrotate_crm_pc: crm
-
+    crm_deploy_dir: /home/ansible/files/deploy/
+    crm_deploy_httpd_conf: etc.httpd.conf.httpd.conf
+    crm_deploy_httpd_status_conf: etc.httpd.conf.d.status.conf
+    crm_deploy_httpd_index_html: var.www.html.index.html
+    crm_deploy_my_cnf_master: etc.my.cnf.master
+    crm_deploy_my_cnf_slave: etc.my.cnf.slave
+    crm_deploy_mysql_ssl_ca_cert: var.lib.mysql.ca.cert.pem
+    crm_deploy_mysql_ssl_pc_cert: var.lib.mysql.processing.cert.pem
+    crm_deploy_mysql_ssl_pc_key: var.lib.mysql.processing.key.pem
+    crm_deploy_mysql_ssl_ap_cert: var.lib.mysql.slave.cert.pem
+    crm_deploy_mysql_ssl_ap_key: var.lib.mysql.slave.key.pem
+    crm_deploy_sudoers_file: etc.sudoers
+    crm_deploy_logrotate_mariadb: etc.logrotate.d.mariadb
+    crm_deploy_logrotate_httpd: etc.logrotate.d.httpd
+    crm_deploy_logrotate_crm_ap: etc.logrotate.d.crm.adminpanel
+    crm_deploy_logrotate_crm_pc: etc.logrotate.d.crm.processing
 
   tasks:
   - include:

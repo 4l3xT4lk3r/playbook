@@ -51,3 +51,14 @@
   shell: grep '^Port 22$' /etc/ssh/sshd_config
   register: deploy_tmp
   ignore_errors: true
+
+- name: "Iptables: change ssh access in /etc/sysconfig/iptables"
+  lineinfile:
+    dest: /etc/sysconfig/iptables
+    regexp: '-A\sINPUT\s-p\stcp\s-m\sstate\s--state\sNEW\s-m\stcp\s--dport\s22\s-j\sACCEPT'
+    line: "-A INPUT -s {{crm_ssh_accepted_hosts}} -p tcp -m state --state NEW -m tcp --dport {{crm_ssh_port}} -j ACCEPT"
+    state: present
+    backup: yes
+  when:
+    - deploy_tmp.stdout == ""
+
