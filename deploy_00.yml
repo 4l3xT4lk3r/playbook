@@ -9,6 +9,12 @@
     crm_timezone: yourtimezone
     crm_ssh_port: 22
     crm_ssh_accepted_hosts: acceptedhosts
+    crm_logrotate_dir: /etc/logrotate.d/
+    crm_logrotate_mariadb: mariadb
+    crm_logrotate_httpd: httpd
+    crm_logrotate_crm_ap: crm
+    crm_logrotate_crm_pc: crm
+
 
   tasks:
   - include:

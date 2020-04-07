@@ -48,6 +48,6 @@
     state: present
 
 - name: "Ssh: check /etc/ssh/sshd_config for Port {{crm_ssh_port}}"
-  shell: grep '^Port 9622$' /etc/ssh/sshd_config
+  shell: grep '^Port 22$' /etc/ssh/sshd_config
   register: deploy_tmp
   ignore_errors: true
