@@ -1,0 +1,11 @@
+---
+- hosts: pc,ap
+  serial: 1
+  gather_facts: false
+  become: yes
+  become_method: sudo
+  vars:
+    crm_datacenter: datacenter
+    crm_timezone: yourtimezone
+
+  tasks:
