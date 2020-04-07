@@ -12,6 +12,15 @@
     value: 1
     state: present
 
+- name: "System: deploy {{crm_logrotate_mariadb}} to {{crm_logrotate_dir}}"
+  copy:
+      src: '{{crm_deploy_dir}}{{crm_deploy_logrotate_mariadb}}'
+      dest: '{{crm_logrotate_dir}}{{crm_logrotate_mariadb}}'
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
 - name: "Yum: install needed software"
   yum:
     name:
