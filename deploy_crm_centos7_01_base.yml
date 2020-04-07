@@ -1,0 +1,13 @@
+- name: "System: set hostname"
+  hostname:
+    name: "{{inventory_hostname}}"
+
+- name: "System: set timezone"
+  timezone:
+    name: "{{crm_timezone}}"
+
+- name: "System: set vm.swappiness to 1"
+  sysctl:
+    name: vm.swappiness
+    value: 1
+    state: present
