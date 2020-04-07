@@ -30,6 +30,15 @@
     crm_deploy_logrotate_httpd: etc.logrotate.d.httpd
     crm_deploy_logrotate_crm_ap: etc.logrotate.d.crm.adminpanel
     crm_deploy_logrotate_crm_pc: etc.logrotate.d.crm.processing
+    crm_mysql_my_cnf_dir: /etc/
+    crm_mysql_my_cnf: my.cnf
+    crm_mysql_data_dir: /var/lib/mysql/
+    crm_mysql_ssl_ca_cert: ca-cert.pem
+    crm_mysql_ssl_pc_cert: processing-cert.pem
+    crm_mysql_ssl_pc_key: processing-key.pem
+    crm_mysql_ssl_ap_cert: slave-cert.pem
+    crm_mysql_ssl_ap_key: slave-key.pem
+    crm_mysql_db_user: crmuser
 
   tasks:
   - include:
