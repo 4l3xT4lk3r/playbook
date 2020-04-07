@@ -44,6 +44,7 @@
     crm_mysql_ssl_ap_cert: slave-cert.pem
     crm_mysql_ssl_ap_key: slave-key.pem
     crm_mysql_db_user: crmuser
+    crm_password: mysuperduperpassword
 
   tasks:
   - include:
