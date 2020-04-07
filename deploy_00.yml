@@ -30,6 +30,11 @@
     crm_deploy_logrotate_httpd: etc.logrotate.d.httpd
     crm_deploy_logrotate_crm_ap: etc.logrotate.d.crm.adminpanel
     crm_deploy_logrotate_crm_pc: etc.logrotate.d.crm.processing
+    crm_httpd_dir: /etc/httpd/conf/
+    crm_httpd_conf: httpd.conf
+    crm_httpd_confd_dir: /etc/httpd/conf.d/
+    crm_httpd_document_root: /var/www/html/
+    crm_httpd_index_html: index.html
     crm_mysql_my_cnf_dir: /etc/
     crm_mysql_my_cnf: my.cnf
     crm_mysql_data_dir: /var/lib/mysql/
