@@ -1,2 +1,3 @@
 Playbook For Deploy.
-For educational Purposes.
+Only for educational purposes.
+
