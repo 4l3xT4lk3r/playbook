@@ -11,3 +11,43 @@
     name: vm.swappiness
     value: 1
     state: present
+
+- name: "Yum: install needed software"
+  yum:
+    name:
+      - mc
+      - tcpdump
+      - nmap
+      - telnet
+      - net-tools
+      - lbzip2
+      - iptables-services
+      - mariadb-server
+      - httpd
+      - php
+      - php-bcmath
+      - php-mbstring
+      - php-pdo
+      - php-mysql
+      - php-process
+      - php-intl
+      - php-xml
+      - php-cli
+      - php-gd
+      - mod_ssl
+      - php-pecl-ssh2
+      - composer
+      - git
+      - mysqltuner
+      - mytop
+      - atop
+      - sysstat
+      - iotop
+      - traceroute
+      - whois
+    state: present
+
+- name: "Ssh: check /etc/ssh/sshd_config for Port {{crm_ssh_port}}"
+  shell: grep '^Port 9622$' /etc/ssh/sshd_config
+  register: deploy_tmp
+  ignore_errors: true
